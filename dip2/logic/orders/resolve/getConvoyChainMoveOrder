@@ -1,0 +1,16 @@
+module.exports = function (orders, chain) {
+    var from = chain[0].convoyFrom;
+    var to = chain[chain.length - 1].convoyTo;
+
+    for(var i = 0; i < orders.length; i++)
+    {
+        var order = orders[i];
+        if (order.type === "Move" &&
+            order.unitType === "Army" &&
+            order.unitLocation === from &&
+            order.moveToName === to) {
+            return order;
+        }
+    }
+    return -1;
+}

@@ -1,0 +1,6 @@
+const getProvinceFromProvinceName = require('./getProvinceFromProvinceName');
+
+module.exports = function(text){
+    var province = getProvinceFromProvinceName(text);
+    return province.fullName
+}

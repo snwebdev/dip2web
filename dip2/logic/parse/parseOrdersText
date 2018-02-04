@@ -1,0 +1,24 @@
+const isAPowerOrAnOrder = require('./isAPowerOrAnOrder');
+const fs = require('fs');
+
+const ordersFile = "orders.txt";
+const text = fs.readFileSync(ordersFile, 'utf-8');
+
+module.exports = function(){
+    var lines = text.split("\n");
+    var prepend = "";
+    for (var i = 0; i < lines.length; i++){
+        var line = lines[i];
+        if(isAPowerOrAnOrder(line) || line === ""){
+          console.log(line)
+        }else {
+            console.log(line);
+            console.log("***error***There is an error in the line above.");
+            console.log("It needs to be the name of a power, or a properly constructed order.");
+            console.log("Can't process orders untill this is rectified.");
+            return
+        }
+
+    }
+return;
+}

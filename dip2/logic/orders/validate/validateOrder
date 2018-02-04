@@ -1,0 +1,21 @@
+module.exports = function(order){
+    var orderType = order.type;
+
+    switch(orderType) {
+        case "Move":
+            validateMoveOrder(order);
+            break;
+        case "Hold":
+            validateMoveOrder(order);
+            break;
+        case "Support":
+            validateMoveOrder(order);
+            break;
+        case "Convoy":
+            validateMoveOrder(order);
+            break
+        default:
+            order = {};
+
+    }
+}
