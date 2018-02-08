@@ -1,0 +1,7 @@
+var map = require('../dip2/logic/map/map');
+
+var line = "";
+map.forEach((e) => {
+    line = `<option value="${e.name}">${e.fullName} => ${e.name}</option>`;
+    console.log(line);
+})

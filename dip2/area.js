@@ -2,7 +2,7 @@
  * Created by stewart on 07/07/17.
  */
 
-var map = require('./orders/map');
+
 
 exports.getArea = function(areaName){
     for (var i = 0; i < map.length; i++){
